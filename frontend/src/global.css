@@ -1,0 +1,505 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities"; */
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Black';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 20 14.3% 4.1%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 20 14.3% 4.1%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 20 14.3% 4.1%;
+
+        --primary: 24 9.8% 10%;
+        --primary-foreground: 60 9.1% 97.8%;
+
+        --secondary: 60 4.8% 95.9%;
+        --secondary-foreground: 24 9.8% 10%;
+
+        --muted: 60 4.8% 95.9%;
+        --muted-foreground: 25 5.3% 44.7%;
+
+        --accent: 60 4.8% 95.9%;
+        --accent-foreground: 24 9.8% 10%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 60 9.1% 97.8%;
+
+        /* --border: 20 5.9% 90%; */
+        --border: 220 13% 91%;
+        --input: 20 5.9% 90%;
+        --ring: 20 14.3% 4.1%;
+
+        --radius: 0.5rem;
+
+        --error500: 0 84% 60%;
+        --error400: 0 91% 71%;
+        --error300: 0 94% 82%;
+
+        --success500: 142 71% 45%;
+        --success400: 142 69% 58%;
+        --success300: 142 77% 73%;
+
+        --warning500: 45 93% 47%;
+        --warning400: 48 96% 53%;
+        --warning300: 50 98% 64%;
+
+        --neutral500: 220 9% 46%;
+        --neutral400: 218 11% 65%;
+        --neutral300: 216 12% 84%;
+
+        --black: 0 0% 0%;
+        --nileBlue: 199 33% 24%;
+        --ming: 196 34% 36%;
+
+        --brand500: 226 71% 40%;
+        --brand400: 224 76% 48%;
+        --brand300: 221 83% 53%;
+    }
+
+    .dark {
+        --background: 20 14.3% 4.1%;
+        --foreground: 60 9.1% 97.8%;
+
+        --card: 20 14.3% 4.1%;
+        --card-foreground: 60 9.1% 97.8%;
+
+        --popover: 20 14.3% 4.1%;
+        --popover-foreground: 60 9.1% 97.8%;
+
+        --primary: 60 9.1% 97.8%;
+        --primary-foreground: 24 9.8% 10%;
+
+        --secondary: 12 6.5% 15.1%;
+        --secondary-foreground: 60 9.1% 97.8%;
+
+        --muted: 12 6.5% 15.1%;
+        --muted-foreground: 24 5.4% 63.9%;
+
+        --accent: 12 6.5% 15.1%;
+        --accent-foreground: 60 9.1% 97.8%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 60 9.1% 97.8%;
+
+        --border: 12 6.5% 15.1%;
+        --input: 12 6.5% 15.1%;
+        --ring: 24 5.7% 82.9%;
+    }
+}
+
+@layer base {
+    * {
+        font-family: Pretendard-Regular;
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+.page-title {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    @apply absolute left-[calc(1.13125rem)] top-[calc(4.3125rem)] text-[calc(1.25rem)];
+}
+
+.alarm-page {
+    background-color: white; /* Replace with your desired background color */
+    min-height: 100vh;
+    font-family: sans-serif; /* Use the font that matches your design */
+}
+
+.alarm-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: white; /* Replace with the color from your design */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust as necessary */
+}
+
+.alarm-header img {
+    width: 48px; /* Adjust to match your design */
+    height: auto;
+    margin-right: 16px;
+}
+
+.alarm-header h2 {
+    font-size: 24px; /* Adjust to match your design */
+    color: white; /* Replace with the color from your design */
+}
+
+.alarm-item {
+    background-color: white; /* Replace with your desired item background color */
+    padding: 16px;
+    margin: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.notification-bar {
+    text-align: center;
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+
+.gray-bar {
+    height: 4px; /* Adjust to your preference for the bar thickness */
+    background-color: #cccccc; /* This is a light gray color, adjust as needed */
+    width: 70%; /* Adjust width as needed */
+    margin: 0 auto; /* This centers the bar */
+}
+
+/* If you prefer a line under the text instead, use a pseudo-element */
+.notification-bar::after {
+    content: '';
+    display: block;
+    height: 4px; /* Thickness of the bar */
+    background-color: #cccccc; /* Color of the bar */
+    width: 70%; /* Length of the bar */
+    margin: 8px auto 0; /* Space above the bar and centering */
+}
+
+.soccer-field {
+    position: relative;
+    background: url('assets/icons/soccerfield.svg') no-repeat center center;
+    background-size: contain;
+    height: 300px; /* Adjust to fit the modal */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.player-card {
+    /* Define positions for your players. This will need to be dynamically set based on your requirements. */
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+}
+
+.player-image {
+    width: 50px; /* Size as per your design */
+    height: 50px; /* Size as per your design */
+    border-radius: 50%;
+}
+
+.player-name {
+    text-align: center;
+    /* margin-top: 5px;
+    margin-left: 5px; */
+}
+
+.horizontal-modal {
+    transform: rotate(90deg); /* 90도 회전 */
+    transform-origin: bottom left; /* 회전 기준점을 왼쪽 하단으로 설정 */
+    width: 100vh; /* 원래 높이가 가로 길이가 됩니다 */
+    height: 100vw; /* 원래 너비가 세로 길이가 됩니다 */
+    position: absolute; /* 필요에 따라 위치를 조정 */
+    top: 100vh;
+    left: 0;
+    margin-left: -100vh; /* 너비만큼 왼쪽으로 마진을 줘서 화면에 맞게 조정 */
+}
+
+@keyframes shine {
+    0% {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+    50% {
+        filter: brightness(1.5);
+        transform: scale(1);
+    }
+    100% {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+}
+
+.shine {
+    animation: shine 3s infinite;
+}
+
+.market-board-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%; /* Adjust based on your layout constraints */
+    overflow: hidden; /* Hide overflow and use scroll in inner components if necessary */
+}
+.tab-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Allows scrolling within tab content if overflow */
+}
+
+
+
+@media (max-width: 600px) {
+    .player-list-container {
+        padding: 5px;
+    }
+    .card {
+        padding: 4px;
+    }
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px; 
+}
+
+.narrow-input {
+    width: 150px;
+}
+
+.player-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid gray;  /* Gray underline */
+    background-color: transparent;
+    border-radius: 8px;
+    margin-bottom: 8px;  /* Adds space between items */
+}
+
+.player-list-container {
+    top: 35%;  /* Adjust the second value to move it down */
+}
+
+@keyframes zoom-in-out {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.animate-zoom-in-out {
+    animation: zoom-in-out 1s ease-in-out;
+}
+
+@keyframes grow-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.animate-grow-in {
+    animation: grow-in 0.9s ease-out forwards;
+}
+
+@keyframes modal-scale-in {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.animate-scale-in {
+    animation: modal-scale-in 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.toaster {
+    animation: slideDown 0.5s ease-out forwards;
+    position: fixed;
+    top: 0;
+    margin-top: 1rem;
+    height: 5rem;
+}
+
+@keyframes flipInX {
+    0% {
+        transform: rotateY(90deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+}
+.flip-enter {
+    animation: flipInX 0.5s forwards;
+}
+
+@keyframes expand {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 6rem;
+        opacity: 1;
+    }
+}
+.expand-animation {
+    animation: expand 0.5s forwards;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+footer {
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@keyframes leftappear {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@keyframes rightappear {
+    0% {
+      transform: translateX(200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+.leftbounc {
+    animation: slide 1.5s infinite ease-in-out;
+}
+
+.leftappear {
+    animation: leftappear 0.8s ease-out forwards;
+}
+
+.rightappear {
+    animation: rightappear 0.8s ease-out forwards;
+}
+
+.clip-trapezoid-left {
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+}
+  
+.clip-trapezoid-right {
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.draggable {
+    cursor: grab;
+}
+  
+.draggable.dragging {
+    opacity: 0.5;
+}
+  
+.dropzone {
+    border: 1px dashed #0072c4;
+}
+  
+.dropzone.dragover {
+    background-color: #e0e0e0;
+    border-color: #000;
+}
+  

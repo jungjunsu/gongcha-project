@@ -1,0 +1,24 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${PROD_MYSQL_URI}:3306/gongcha?serverTimezone=Asia/Seoul
+    username: ${PROD_MYSQL_USERNAME}
+    password: ${PROD_MYSQL_PASSWORD}
+  
+  jwt:
+    redis:
+      host: ${PROD_REDIS_HOST}
+      port: ${PROD_REDIS_PORT}
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: info
+        type:
+          descriptor:
+            sql: trace
